@@ -1,0 +1,6 @@
+#Wed Dec 04 16:16:31 CET 2019
+expression=public static void
+org.eclipse.help.ui.localSearch.master=true
+org.eclipse.sdk.Google.master=true
+org.eclipse.sdk.Eclipse.master=true
+__DEFAULT__=false

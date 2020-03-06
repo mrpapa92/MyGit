@@ -1,0 +1,13 @@
+package reserve_table;
+
+import java.util.Scanner;
+
+public class Exercise {
+
+	public static void main (String arg[]) {
+	    
+		Scanner in=new Scanner(System.in);
+		String name=in.nextLine();
+		System.out.println("hi " + name);
+	}
+}

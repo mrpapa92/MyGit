@@ -1,0 +1,2 @@
+127.0.0.1 - - [31/Oct/2019:15:45:06 +0100] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [31/Oct/2019:15:45:07 +0100] "GET /Reservations/WEB-INF/classes/reserve_table/Exercise.java HTTP/1.1" 404 1047

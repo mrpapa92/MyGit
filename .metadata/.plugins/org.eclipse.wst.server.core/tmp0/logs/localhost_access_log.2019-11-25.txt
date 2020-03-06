@@ -1,0 +1,17 @@
+127.0.0.1 - - [25/Nov/2019:13:53:35 +0100] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:13:53:36 +0100] "GET /Watering/ HTTP/1.1" 200 6652
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:13:53:36 +0100] "GET /Watering/graphic.css HTTP/1.1" 200 3804
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:13:53:36 +0100] "GET /Watering/images/wood.jpeg HTTP/1.1" 200 562863
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:13:53:40 +0100] "GET /Watering/ HTTP/1.1" 200 6652
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:13:53:40 +0100] "GET /Watering/graphic.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:13:53:40 +0100] "GET /Watering/images/wood.jpeg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:13:53:41 +0100] "GET /Watering/ HTTP/1.1" 200 6652
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:13:53:41 +0100] "GET /Watering/graphic.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:13:53:41 +0100] "GET /Watering/images/wood.jpeg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:13:53:41 +0100] "GET /Watering/ HTTP/1.1" 200 6652
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:13:53:41 +0100] "GET /Watering/graphic.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:13:53:41 +0100] "GET /Watering/images/wood.jpeg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:13:53:41 +0100] "GET /Watering/ HTTP/1.1" 200 6652
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:13:53:41 +0100] "GET /Watering/graphic.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:13:53:41 +0100] "GET /Watering/images/wood.jpeg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:13:53:45 +0100] "POST /Watering/timer HTTP/1.1" 200 291

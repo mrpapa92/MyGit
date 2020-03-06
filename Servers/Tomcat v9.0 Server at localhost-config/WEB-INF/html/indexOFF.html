@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="graphic.css" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-watering</title>
+</head>
+<body>
+    <div id="clock"><iframe src="http://free.timeanddate.com/clock/i6igvaxw/n26/tlgr17/fn6/fs16/fcfff/tct/pct/ftb/tt0/tm1/td1/th1/tb4" frameborder="0" width="199" height="42" ></iframe></div>
+    <div class="title"><h1 ALIGN="center">Αυτόματο Πότισμα</h1></div>
+    <div id="stateon"><h3 style="font-size: 20px; color: #cc0000;" ALIGN="center">ΠΟΤΙΣΜΑ:ΑΝΕΝΕΡΓΟ</h3></div>
+   <div class="kentriko" align="center">
+        <div class="alignIt"><button id="eidopoihsh">Ειδοποίηση με e-mail</button>
+            <div class="sub-unsub">
+                <button onclick="document.getElementById('sub').style.display='block'" style="width:auto;">Εγγραφή</button><br>
+                <form action="DeleteEmail" method="get">
+                <button>Κατάργηση Εγγραφής</button>
+                </form>
+            </div>
+        </div>
+        <div id="schedule">
+            <form method ="get" action="ReturnDB">
+                <button type="submit" name="getDatabase" value="getDB" style="width:auto;" >Προγραμματισμένο Πότισμα</button> 
+            </form>
+        </div>
+        <div class="formes" align="center">
+        <form action="ForceShutdown" method="post">
+            <table align="center">
+                <tbody>
+                    <tr>
+                        <td>
+                        <button id="stop">Διακοπή Ποτίσματος</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        <form method="post" action="timer">
+            <table align="center">
+                <tr>
+                    <td><input type="text" placeholder="Εισάγετε Λεπτά" name="minutes" required></td>
+                </tr>
+                <tr>
+                 <td><button id="begin" type="submit" name="button" value="manualbt">Έναρξη</button></td>
+                </tr>
+            </table>
+        </form>
+        <form method="post" action="timer">  
+            <table align="center">
+                <tr>
+                    <td><button type="submit" name="defaultbt" value="30">30 Λεπτά</button></td>
+                    <td><button type="submit" name="defaultbt" value="60">1 Ώρα</button></td>
+                </tr>
+                <tr>
+                    <td><button type="submit" name="defaultbt" value="90">1.30 Ώρα</button></td>
+                    <td><button type="submit" name="defaultbt" value="120">2 Ώρες</button></td>
+                </tr>
+                <tr>
+                    <td><button type="submit" name="defaultbt" value="150">2.30 Ώρες</button></td>
+                    <td><button type="submit" name="defaultbt" value="180">3 Ώρες</button></td>
+                </tr>
+                <tr>
+                    <td><button type="submit" name="defaultbt" value="210">3.30 Ώρες</button></td>
+                    <td><button type="submit" name="defaultbt" value="240">4 Ώρες</button></td>
+                </tr>
+                <tr>
+                    <td><button type="submit" name="defaultbt" value="270">4.30 Ώρες</button></td>
+                    <td><button type="submit" name="defaultbt" value="300">5 Ώρες</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    </div>
+    <div id="sub" class="modal">
+        <span onclick="document.getElementById('sub').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <form class="modal-content" method="post" action="Subscribe">
+            <div class="container">
+                <p>Εγγραφείτε για να λαμβάνετε ειδοποιήσεις</p>
+                <br><input type="text" placeholder="Εισαγωγή Email" name="email" required><br>
+                <div class="clearfix">
+                    <button class="signupbtn" type="submit" >Εγγραφή</button>
+                    <button class="cancelbtn" type="button" onclick="document.getElementById('sub').style.display='none'" >Ακύρωση</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <div align="center">
+        <form id="selection" method="post" action="timer">
+            <table style="font-size:22px;">
+                <tbody>
+                    <tr>
+                        <td class="timer-label">
+                        <span class="timer">Mέρα</span>
+                        </td>
+                        <td class="timer-select">   
+                            <select name="day">
+                                <option value="2">Δευτέρα</option>
+                                <option value="3">Τρίτη</option>
+                                <option value="4">Τετάρτη</option>
+                                <option value="5">Πέμπτη</option>
+                                <option value="6">Παρασκευή</option>
+                                <option value="7">Σάββατο</option>
+                                <option value="1">Κυριακή</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="timer-label">
+                            <span class="timer">Ώρα Έναρξης</span>
+                        </td>
+                        <td class="timer-select">
+                            <select name="hourFrom" id="hourFrom"></select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="timer-label">
+                            <span class="timer">Ώρα Λήξης</span>
+                        </td>
+                        <td class="timer-select">
+                            <select name="hourTo" id="hourTo"></select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="begin" type="submit" name="button" value="schedulebt">Έναρξη</button>
+        </form>
+    </div>
+</body>
+<script>
+    (function() { 
+        var elm = document.getElementById('hourTo'),
+        df = document.createDocumentFragment();
+        for (var i = 0; i <= 23; i++) {
+            var option = document.createElement('option');
+            option.value = i;
+            if(i % 10 == i){
+                option.appendChild(document.createTextNode("0"+i+":00"));
+            }
+            else{
+                option.appendChild(document.createTextNode(i+":00"));
+            }
+            df.appendChild(option);
+        }
+        elm.appendChild(df);
+    }());
+    (function() { 
+        var elm = document.getElementById('hourFrom'),
+        df = document.createDocumentFragment();
+        for (var i = 0; i <= 23; i++) {
+            var option = document.createElement('option');
+            option.value = i;
+            if(i % 10 == i){
+            option.appendChild(document.createTextNode("0"+i+":00"));
+            }
+            else{
+            option.appendChild(document.createTextNode(i+":00"));
+            }
+            df.appendChild(option);
+        }
+        elm.appendChild(df);
+}());
+</script>
+<script>
+    var modal = document.getElementById('sub');
+    window.onclick = function(event) {
+        if (event.target == modal ) {
+            modal.style.display = "none";
+        
+        }
+    }
+</script>
+</html>
